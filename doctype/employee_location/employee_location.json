@@ -1,0 +1,58 @@
+{
+  "name": "Employee Location",
+  "doctype": "DocType",
+  "module": "Human Resources",
+  "fields": [
+    {
+      "fieldname": "employee",
+      "label": "Employee",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "in_list_view": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "latitude",
+      "label": "Latitude",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "longitude",
+      "label": "Longitude",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "timestamp",
+      "label": "Timestamp",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "check_in_status",
+      "label": "Check-in Status",
+      "fieldtype": "Select",
+      "options": "Checked In\nChecked Out",
+      "default": "Checked In"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Employee",
+      "read": 1,
+      "create": 1
+    }
+  ],
+  "autoname": "format:LOC-.employee.-.timestamp."
+}
